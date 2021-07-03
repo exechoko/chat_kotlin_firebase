@@ -5,7 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#034A45"
-    tools:context=".MainActivity">
+    tools:context=".RegisterActivity">
+
+    <Button
+        android:id="@+id/selectPhotoButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="100dp"
+        android:text="Selecciona una foto"
+        android:background="@drawable/rounded_select_photo_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/edtUsername"
@@ -15,7 +27,7 @@
         android:textAlignment="center"
         android:ems="10"
         android:padding="6dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
         android:background="@drawable/rounded_edittext"
@@ -23,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/selectPhotoButton" />
 
     <EditText
         android:id="@+id/edtEmail"
@@ -88,5 +100,15 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnRegister" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/selectPhotoCircleView"
+        app:civ_border_width="4dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="@+id/selectPhotoButton"
+        app:layout_constraintEnd_toEndOf="@+id/selectPhotoButton"
+        app:layout_constraintStart_toStartOf="@+id/selectPhotoButton"
+        app:layout_constraintTop_toTopOf="@+id/selectPhotoButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
