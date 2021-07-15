@@ -1,9 +1,11 @@
-package com.emdev.kotlinmessenger
+package com.emdev.kotlinmessenger.registerlogin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
+import com.emdev.kotlinmessenger.R
+import com.emdev.kotlinmessenger.messages.LatestMessageActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -18,7 +20,10 @@ class LoginActivity : AppCompatActivity() {
 
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email,pass)
 
-            Toast.makeText(this, "Ingreso con el correo: $email, pass: $pass", Toast.LENGTH_SHORT ).show()
+            //Toast.makeText(this, "Ingreso con el correo: $email, pass: $pass", Toast.LENGTH_SHORT ).show()
+            val intent = Intent(this, LatestMessageActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
         }
 
         olvideMiClave.setOnClickListener {

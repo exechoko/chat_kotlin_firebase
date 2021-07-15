@@ -1,14 +1,16 @@
-package com.emdev.kotlinmessenger
+package com.emdev.kotlinmessenger.registerlogin
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
+import com.emdev.kotlinmessenger.R
+import com.emdev.kotlinmessenger.messages.LatestMessageActivity
+import com.emdev.kotlinmessenger.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -124,4 +126,3 @@ class RegisterActivity : AppCompatActivity() {
     }
 }
 
-class User(val uid: String, val username: String, val profileImageUrl: String)
